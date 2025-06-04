@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PGP-Schlüssel Generator</title>
+
+    <!-- Verweis auf die lokal gespeicherte OpenPGP.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/openpgp/4.10.10/openpgp.min.js"></script>
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>PGP Schlüssel Generator</h1>
+
+        <div class="form-container">
+            <button onclick="generateKeys()">Schlüssel generieren</button><br>
+
+            <div class="key-results">
+                <h2><br>Öffentlicher Schlüssel</h2>
+                <textarea id="publicKey" rows="10" cols="60" readonly></textarea>
+
+                <h2><br>Privater Schlüssel</h2>
+                <textarea id="privateKey" rows="10" cols="60" readonly></textarea>
+            </div>
+
+            <div class="download-buttons">
+                <button onclick="downloadKey('public')">Öffentlichen Schlüssel herunterladen</button>
+                <button onclick="downloadKey('private')">Privaten Schlüssel herunterladen</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
